@@ -1,5 +1,12 @@
 <li>
-  <h4> Appareil : {{ appareilName }}</h4>
+  <h4 [ngStyle]="{color: getColor()}"> Appareil : {{ appareilName }}</h4>
+  <!--<div class="icone-red" *ngIf="appareilStatus === 'off' "></div>
+  <div class="icone-green" *ngIf="appareilStatus === 'on' "></div>-->
+  <div [ngClass]="{
+    'icone-red': appareilStatus === 'off',
+    'icone-green': appareilStatus === 'on'
+  }"></div>
+
   Description : <br>
   État : {{ getStatus() }} <br>
   Modifier le nom de l'appareil:

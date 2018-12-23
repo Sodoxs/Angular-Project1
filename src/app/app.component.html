@@ -9,9 +9,10 @@
 
 <h2> Mes appareils </h2>
 <ul>
-  <li> <app-appareil [appareilName]="appareilOne" [appareilStatus]="'off'"></app-appareil> </li>
-  <li> <app-appareil [appareilName]="appareilTwo" [appareilStatus]="'on'"></app-appareil> </li>
-  <li> <app-appareil [appareilName]="appareilThree" [appareilStatus]="'off'"></app-appareil> </li>
+  <app-appareil *ngFor="let appareil of appareils"
+                [appareilName] = "appareil.name"
+                [appareilStatus] = "appareil.status">
+  </app-appareil>
 </ul>
 <button [disabled]="!isAuth"
 (click)="onAllumer()"

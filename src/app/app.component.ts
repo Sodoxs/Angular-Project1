@@ -11,9 +11,20 @@ export class AppComponent
   title2 = 'My first Angular App!';
   isAuth = false;
 
-  appareilOne = "Machine à laver";
-  appareilTwo = "Frigo";
-  appareilThree = 'Ordinateur';
+  appareils = [
+    {
+      name: 'Washing machine',
+      status: 'off'
+    },
+    {
+      name: 'Fridge',
+      status: 'on'
+    },
+    {
+      name: 'Computer',
+      status: 'off'
+    }
+  ];
 
   constructor()
   {
@@ -29,4 +40,5 @@ export class AppComponent
   {
     console.log('On allume tout !');
   }
+
 }
